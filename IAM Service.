@@ -1,1 +1,8 @@
-.
+IAM Service
+==================
+Authentication:
+Authorization:
+
+If a person in the organizarion has root access he can do  any thing in organization like if he given root access to every one in org ,knowingly or unknowingly some people might delete the database.
+IAM bascially doing the Authentication and Autorization.
+let,s say there is person joined the company ,now he need read or write acces to some of the services in aws, so askes devops engineer ,now devops person creates user with his employee number and gives access to the services he wnts.
