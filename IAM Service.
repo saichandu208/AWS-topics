@@ -1,8 +1,51 @@
 IAM Service
 ==================
-Authentication:
-Authorization:
+Authentication:In the authentication process, the identity of users are checked for providing the access to the system
+
+Authorization:While in authorization process, a the person’s or user’s authorities are checked for accessing the resources.
+
 
 If a person in the organizarion has root access he can do  any thing in organization like if he given root access to every one in org ,knowingly or unknowingly some people might delete the database.
 IAM bascially doing the Authentication and Autorization.
 let,s say there is person joined the company ,now he need read or write acces to some of the services in aws, so askes devops engineer ,now devops person creates user with his employee number and gives access to the services he wnts.
+IAM has--->Users
+           policies
+           groups
+When we create a user we attach the policies what that user has to do.
+if we won't attach the polices the user is only able to enter the aws, if user need to access anything we need to atach the policies.
+
+two types of policies 1)Managed policies== created and managed by aws
+                       2)Inline policies==
+created and managed by user.
+
+============================================
+Iam creating the user for autherization and granting the permissions for authorization
+===============================================
+
+Why groups
+An IAM user group is a collection of IAM users
+
+for suppose group of people need the admin access in the org we create the group attach the policies related and add those people in that group
+================================================
+Iam roles
+IAM roles are similar to Iam users, a role is temperary , mean a role does not have long term credentials.
+=============================================
+creating the users
+go to Iam-->  create the user and attach policies.
+Log out and login as Iam user.
+================================
+Interview question:
+Are you using the root user;
+As a devops engineer i use Iam user even we have access to most of the services .
+
+suppose there are four mumbers in devops team if all are using root access we doesn't know who deleted something.
+
+Groups
+
+===================
+go to user groups
+create the group like developer
+attach the polices
+add the people to the group.
+
+Advantage of groups is like suppose 5 users need access to ec2 instance we can make them a group and attach related policie to group insted of attaching it to each and every user individually.
