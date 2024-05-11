@@ -1,1 +1,15 @@
+vpc
+=====
+Internet Gateway:provides the internet to public ip
+public and private subnet:created in vpc.
+Nat Gateway: provides the internet to private ip create din NAT Gateway.
+Router with Routing table
+
+CICDR=== classless InterDomine Routing
+===========================================
+Default ip address of vpc starts with 172 thats why whenever we create an ec2 instance your private ip starts with 172 series.
+
+suppose your vpc created with 192 series then your ec2 instance private ip starts with 192 series.
+ 
+
 
