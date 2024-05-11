@@ -1,1 +1,42 @@
+Route53
+============
+DNS service in AWS,DNS portnumber is 53.
 
+DNS= keps track of all hostnames and ip address
+  it converts ip to host and host to ip
+
+we can purchase the domine in route 53
+It is global
+
+===========
+DNS is all about records
+Hosted zone = container od records
+hosted name is same as domine name
+============
+Two type hosted zone
+Public hosted zone :if you want to access through internet go with public hosted zone.
+private hosted zone: if you want to access it within vpc  or aws go with private hosted zone
+======================================
+request flow of dns
+===========
+R53-->Hosted zone-->Records-->ELB nasty url-->EC2 instances.
+===================
+When we create the public hosted zone two records will be created
+---NS record-- pool of servers (~ 4 servers)
+-->soa record-->Admin of hosted zone conntains ip
+Na and soa records are automatically created and handled by AWS
+=====================
+Route 53 is Aws provided service 
+we another Private DNS services like GO Daddy
+if you purchase domine in go-daddy 
+
+you need to create the hosted zone manually in R53.automatically the ns and soa records  are created.
+ 
+then update aws R53 NS Records in Go-daddy
+go daddy says ns record belong to the aws then the request will go to aws 
+
+the only problem of purchasing the domine name in private platform is latency
+
+Because the request are redirected from go daddy to R53 in AWS.
+
+Recommanded to purchase the domine name in R53.
