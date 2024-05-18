@@ -1,0 +1,52 @@
+More command
+-->more -n filename.txt
+   -->displays text upto specified line
+eg: more -2 filename.txt
+more +n filename.txt
+eg: more +3 filename.txt
+ ---> the text is displaced from specifed line
+=======================================
+head command
+-->head filename
+by default head command displays top 10 lines from a file
+-->head -n filename
+   -->  this command displays the top n number of lines in file
+=========================================
+tail command
+--->tail filename 
+by default tail name displays the last n number of lines
+--->tail -10 filename.txt
+=============================================
+df -h --->to display the disk space
+
+df -h | awk '{print $5}'
+-->by this command you will get 5 the coloumn from the disk data
+====================================
+df -h|grep /dev/mapper/centos-root
+--> here you will get a row line started with about path
+o/p -->/dev/mapper/centos-root  5g 43g 7.4g 86% /
+
+df -h |grep /dev/mapper/centos-root | awk '{print $5}'
+o/p-->86%
+
+now we remove percentage to do some operation
+
+df -h | grep /dev/mapper/centos-root | awk '{print $5}'| cut -d '%' -f1
+
+o/p-->86
+
+Now write the shell script which gives the alert when disk space is more than 80.
+-----------------------------------
+
+vi diskutilization.sh
+#!/bin/bash
+echo "check disk usage in linux"
+disk_size=`df -h | grep /dev/mapper/centos-root | awk '{print $5}'| cut -d '%' -f1`
+echo "$disk_size% of disk is filled"
+if[$disk_size -gt 80 ];
+then
+  echo "disk is utilized more than 80%"
+else
+   echo "enough disk is available"
+fi 
+
