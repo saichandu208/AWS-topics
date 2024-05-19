@@ -1,0 +1,52 @@
+du command
+=================
+du command is  standard linux command that allows user to get the disk usage information
+
+Flags:
+-->-h : the -h flag prints size outputs, in human readable formates.
+--->-a: it lists the sizes of all files and directories in the given path
+
+Usage:
+
+du -ah/tmp: It lists the size of all files and directory in the path /tmp in human readable format.
+-----------------
+practical
+du -ah ---> you will get all the files with size
+du -ah/ tmp-->you will get all the files with size in that loc.
+---------------------------------
+Sort command
+============
+sort command is used to sort a file, arranging the records in particular order.
+
+Flags:
+sort -n: Sort command is used to the file and arrange the records in particular order.
+
+flags:
+sort -n:sort the file in numerical order
+sort -r: print the output in reverse order
+sort -h: human-numeric sort(compare human readable numbers
+sort -hr:
+-------------
+du -af| sort -h
+===================
+how to acces the arguments passed to shell scripting from the command line.
+-->command line arguments are parameters that are passed to a script while executing them in bash shell.
+-->lets say iam running the script as:
+./commandlinearguments.sh devops techstack learning
+$0--->script Name
+$1--> First parameter of the script
+$@--->complete list of arguments
+$#--->total number of parameters
+$$--->process id of script
+$?--> Exit code for script
+
+=============
+#/bin/bash
+echo "this program get the first 10 biggest file in the file system via positional argument"
+path="$1"
+echo $path
+du -ah| sort -hr |head -n > /tmp/filesize.txt
+echo "this is the list of bit files"
+cat /tmp/filesize.txt
+----------------------
+
