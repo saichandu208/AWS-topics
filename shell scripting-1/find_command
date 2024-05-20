@@ -1,0 +1,35 @@
+find command
+==================
+It can be used to find the files and directories and perform  subsequent operations on them.
+It supports searching by file, folder,name,creation,datemodification date, owner and permissions.
+
+Usage: 
+find . filename: find the file with filename in the current working directory.
+we can specify any other location also.
+======================
+Mtime:(modified time):
+Modified timestamp indicates the last time the contents of the file were modified.
+If new contents were added, deleted,or replaced in the file,the modified time stamp was changed.
+
++n for greater than n, -n for less than n.
+
+-mtime+30-->get the files greater than 30 days
+===============================
+#!/bin/bash
+echo"this script deletes the files greater than 30 days"
+path="$1"
+echo $path
+find $path -mtime+30 -delete
+if [[ $? -eq 0]]
+then
+ echo "Files are succesfully deleted"
+else
+  echo "deletion having the issue"
+fi
+----------
+chmod +x filename
+./filename (give file path)
+here $1 is first argument it takes the first file path and deletes the files
+$?(exit status)-->if above line is success it gives 0 as output.
+
+
