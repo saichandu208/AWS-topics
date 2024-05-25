@@ -1,0 +1,31 @@
+installing the software
+===========================
+We need to install prometheus software in our system, but we need to first check that if the file exists in our system or not , if it already exists then it will not download.
+
+wget
+===========
+by using the wget we download the files from the web. It supports HTTP, HTTPS,AND FTP protocols and retrival through HTTP proxies.
+
+Installing the wget
+===================
+To check wheather wget is installed or not
+rpm -qa|grep wget
+Yum install wget -y (for linux or centos)
+sudo apt -get install wget (for ubuntu)
+============
+vim shell_wget.sh
+#!/bin/bash
+echo "Downloading the prometheus binaries"
+if [ -e /home/ec2-user/prometheus-2.42.0.linux-amd64.tar.gz];
+then
+   echo "file is already existing so no need to download"
+   tar -zxvf home/ec2-user/prometheus-2.42.0.linux-amd64.tar.gz
+else
+    echo "binary does not exists in system first we need to download it"
+            
+wget https://github.com/promethenus/prometheus/release/download/v2.42.0/prometheus-2.42.0.linux-amd64.tar.gz
+tar -zxvf home/ec2-user/prometheus-2.42.0.linux-amd64.tar.gz
+echo "file has been extracted "
+fi
+
+
