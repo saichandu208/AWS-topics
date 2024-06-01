@@ -1,1 +1,25 @@
-s
+Cloud Watch
+===========
+Cloud watch is gatekeeper for my AWS account which helps in implementing monitoring Alerting and Reporting.Using these feature of cloud watch you can keep track of your aws account.
+
+Advantages of cloud watch
+==========================
+1)Monitoring like application or infrastructure monitoring.
+2)TO monitor real life metrics 
+
+metrics here bascially means 
+
+---> how many Api requests my application inside the ec2 instance got.
+--->what is the cpu utilization during the last 30 mins on my ec2 instance
+----> metrics is something that understand the utilization or details of your aws services.
+
+3)Alarms: you can create the alrms
+4)Log insights: logging is  bascially providing the capability of which service is accessing the other service.
+for example we will connect the ec2 to code deploy that thing will be recorded in cloud watch. also we get the exact time stamp when codedeploy tried to access ec2.
+4) custom metrics:
+  cloud watch doesn't track the memory utilization by default.
+    so we need to impliment the custom metrics
+5) cost optimization:Reducing the cost of the aws. cloud watch plays one of the importent role in cost optimization
+cloudwatch directly does not perform the cost optimization.but we can integrate cloud watch with different services, helps in reducing the cost by identifying the resources that someone has created and not using.
+6) scaling:we can scale the instance . 
+       
